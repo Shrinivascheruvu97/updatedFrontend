@@ -1,0 +1,455 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 150vh;
+    /* background: linear-gradient(#2196f3, #e91e63); */
+    background: linear-gradient(to right, #5d6d61, #08992d);
+    background-image: url('https://tourism.bihar.gov.in/content/dam/bihar-tourism/others/hotel.svg');
+    overflow: auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+
+}
+
+.wrapper {
+    position: relative;
+    width: 300px;
+    height: 600px;
+    color: #5f6481;
+}
+
+.form-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #0f0f11;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    
+}
+.not-member {
+    color: rgb(247, 236, 236);
+  }
+
+.wrapper.animate-signUp .form-wrapper.sign-in {
+    transform: rotate(7deg);
+    animation: animateRotate .7s ease-in-out forwards;
+    animation-delay: .3s;
+}
+
+.wrapper.animate-signIn .form-wrapper.sign-in {
+    animation: animateSignIn 1.5s ease-in-out forwards;
+}
+
+@keyframes animateSignIn {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-500px);
+    }
+
+    100% {
+        transform: translateX(0) rotate(7deg);
+    }
+}
+
+.wrapper .form-wrapper.sign-up {
+    transform: rotate(7deg);
+}
+
+.wrapper.animate-signIn .form-wrapper.sign-up {
+    animation: animateRotate .7s ease-in-out forwards;
+    animation-delay: .3s;
+}
+
+@keyframes animateRotate {
+    0% {
+        transform: rotate(7deg);
+    }
+
+    100% {
+        transform: rotate(0);
+        z-index: 1;
+    }
+}
+
+.wrapper.animate-signUp .form-wrapper.sign-up {
+    animation: animateSignUp 1.5s ease-in-out forwards;
+}
+
+@keyframes animateSignUp {
+    0% {
+        transform: translateX(0);
+        z-index: 1;
+    }
+
+    50% {
+        transform: translateX(500px);
+    }
+
+    100% {
+        transform: translateX(0) rotate(7deg);
+    }
+}
+
+
+
+h2 {
+    font-size: 30px;
+    color: #555;
+    text-align: center;
+}
+
+.input-group {
+    position: relative;
+    width: 320px;
+    margin: 30px 0;
+}
+
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #333;
+    padding: 0 5px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-group input {
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    color: #333;
+    padding: 0 10px;
+    background: transparent;
+    border: 1px solid #333;
+    outline: none;
+    border-radius: 5px;
+}
+
+.input-group input:focus~label,
+.input-group input:valid~label {
+    top: 0;
+    font-size: 12px;
+    background: #f8f7f7;
+}
+
+.forgot-pass {
+    margin: -15px 0 15px;
+}
+
+.forgot-pass a {
+    color: #2c2929;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.forgot-pass a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(to right, #699e7e, #2a8444);
+    /* background: linear-gradient(79deg, #7439db, #c66fbc 48%, #f7944d); */
+   
+    box-shadow: 0 2px 10px rgba(248, 246, 246, 0.4);
+    font-size: 16px;
+    color: #f8f1f1;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.sign-link {
+    font-size: 14px;
+    text-align: center;
+    margin: 25px 0;
+}
+
+.sign-link p {
+    color: #ffffff;
+}
+
+.sign-link p a {
+    color:#37b08c;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.sign-link p a:hover {
+    text-decoration: underline;
+}
+
+/* body{
+    font-family: sans-serif;
+    background: #000;
+
+} */
+
+
+ 
+ 
+  
+  
+  
+  
+  
+  
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #f3eff3;
+    border-radius: 8px;
+    font-size: 0;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+  }
+nav a{
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #f5f1f1;
+    text-decoration: none;
+    line-height:50px;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    text-align: center;
+}
+nav .animation{
+    position: absolute;
+    height: 100%;
+    top: 0;
+    z-index: 0;
+    background: #37b08c;
+    border-radius: 8px;
+    transition:all;
+    -webkit-transition:all .5s ease 0s;
+    
+}
+/* a:nth-child(1){
+    width: 100px;
+}
+nav .start-home,a:nth-child(1):hover~.animation{
+    width: 100px;
+    left: 0;
+}
+a:nth-child(2){
+    width: 110px;
+}
+nav .start-about,a:nth-child(2):hover~.animation{
+    width: 110px;
+    left: 100px;
+}
+a:nth-child(3){
+    width: 100px;
+}
+nav .start-home,a:nth-child(3):hover~.animation{
+    width: 100px;
+    left: 210px;
+}
+a:nth-child(4){
+    width: 160px;
+}
+nav .start-portfolio,a:nth-child(4):hover~.animation{
+    width: 160px;
+    left: 310px;
+}
+a:nth-child(5){
+    width: 120px;
+}
+nav .start-contact,a:nth-child(5):hover~.animation{
+    width: 120px;
+    left: 470px;
+} */
+
+
+.admin-home-page a:nth-child(1) {
+    width: 100px;
+  }
+  
+  .admin-home-page nav .start-home,
+  .admin-home-page a:nth-child(1):hover ~ .animation {
+    width: 100px;
+    left: 0;
+  }
+  
+  .admin-home-page a:nth-child(2) {
+    width: 110px;
+  }
+  
+  .admin-home-page nav .start-about,
+  .admin-home-page a:nth-child(2):hover ~ .animation {
+    width: 110px;
+    left: 100px;
+  }
+  
+  .admin-home-page a:nth-child(3) {
+    width: 100px;
+  }
+  
+  .admin-home-page nav .start-home,
+  .admin-home-page a:nth-child(3):hover ~ .animation {
+    width: 100px;
+    left: 210px;
+  }
+  
+  .admin-home-page a:nth-child(4) {
+    width: 160px;
+  }
+  
+  .admin-home-page nav .start-portfolio,
+  .admin-home-page a:nth-child(4):hover ~ .animation {
+    width: 160px;
+    left: 310px;
+  }
+  
+  .admin-home-page a:nth-child(5) {
+    width: 120px;
+  }
+  
+  .admin-home-page nav .start-contact,
+  .admin-home-page a:nth-child(5):hover ~ .animation {
+    width: 120px;
+    left: 470px;
+  }
+  
+
+.menu-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    position: relative;
+    z-index: 1000;
+  }
+  
+  .menu-list {
+    position: static;
+    top: calc(100% + 8px);
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    z-index: 999;
+  }
+  
+  .menu-list a {
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    color: #faf8f8;
+  }
+  
+  .menu-list a:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .custom-modal .modal-dialog {
+    max-width: 1000px; /* Adjust the width as needed */
+  }
+  
+  .custom-modal .modal-content {
+    max-height: 500px; /* Adjust the height as needed */
+    overflow-y: auto; /* Enable vertical scrolling if needed */
+  }
+
+  .notice-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .notice-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
+  }
+  
+  .notice-heading {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .notice-date {
+    font-size: 12px;
+    color: rgb(12, 12, 12);
+    margin-bottom: 10px;
+  }
+  
+  .notice-content {
+    white-space: pre-line;
+  }
+    
+
+
+  .carousel-container {
+    width: 1000px; /* Adjust the width as per your requirement */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+  }
+  
+  .carousel-item {
+    height: 200px; /* Adjust the height as per your requirement */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .carousel-item img {
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .notification-banner {
+    width: 100%;
+    padding: 16px;
+    background-color: #f44336;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+  }
+  
+ 
+  
+  
+
+
